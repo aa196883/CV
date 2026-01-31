@@ -1,0 +1,12 @@
+{
+  "name": "cv",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Adel ALY CV (HTML -> PDF via Playwright)",
+  "scripts": {
+    "pdf": "node generate-pdf.js"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}

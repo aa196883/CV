@@ -1,0 +1,39 @@
+@page {
+  size: A4;
+  margin: 14mm 14mm 14mm 14mm;
+}
+
+/* Print layout: make it look like a real 1-page CV */
+@media print {
+  html, body {
+    background: #fff !important;
+  }
+
+  .page {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+  }
+
+  .no-print { display: none !important; }
+
+  a {
+    text-decoration: none;
+  }
+
+  /* Avoid awkward page breaks */
+  section, article, ul, li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Keep typography crisp */
+  .name { font-size: 26px; }
+  body { font-size: 11px; line-height: 1.32; }
+
+  /* Ensure cards don’t eat too much space */
+  .card { background: #fff; }
+  .chip { background: #fff; }
+}
