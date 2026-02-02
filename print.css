@@ -37,3 +37,11 @@
   .card { background: #fff; }
   .chip { background: #fff; }
 }
+
+@media print {
+  .avatar{
+    width:120;
+    height:120;
+    box-shadow:none;
+  }
+}
