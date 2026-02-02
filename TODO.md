@@ -1,0 +1,2 @@
+- Acheter un nom de domaine
+- faire un page web de publications
