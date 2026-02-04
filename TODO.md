@@ -1,2 +1,5 @@
 - Acheter un nom de domaine
 - faire un page web de publications
+- changer le projet jeux de société pour une version demo
+- mettre les liens pour SKRID
+- relire
