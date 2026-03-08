@@ -1,7 +1,7 @@
 const path = require("path");
 const { chromium } = require("playwright");
 
-async function exportPdf(htmlFile, outFile) {
+async function exportPdf(htmlFile, outFile, scale = 1.0) {
   const browser = await chromium.launch();
   const page = await browser.newPage();
 
@@ -15,7 +15,14 @@ async function exportPdf(htmlFile, outFile) {
     path: outFile,
     format: "A4",
     printBackground: true,
-    preferCSSPageSize: true
+    preferCSSPageSize: true,
+    scale,
+    margin: {
+      top: "8mm",
+      right: "8mm",
+      bottom: "8mm",
+      left: "8mm"
+    }
   });
 
   await browser.close();
@@ -23,6 +30,6 @@ async function exportPdf(htmlFile, outFile) {
 }
 
 (async () => {
-  await exportPdf("index.en.html", "Adel_Aly_CV_EN.pdf");
-  await exportPdf("index.fr.html", "Adel_Aly_CV_FR.pdf");
+  await exportPdf("index.en.html", "Adel_Aly_CV_EN.pdf", 0.92);
+  await exportPdf("index.fr.html", "Adel_Aly_CV_FR.pdf", 0.92);
 })();
